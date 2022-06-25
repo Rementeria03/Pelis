@@ -1,5 +1,4 @@
 import { Flex, Heading, Spacer } from "@chakra-ui/react";
-import { Link } from "wouter";
 import SearchForm from "../SearchForm";
 
 export default function Header() {

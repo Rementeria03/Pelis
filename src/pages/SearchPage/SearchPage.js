@@ -1,6 +1,5 @@
 import { Grid } from "@chakra-ui/react";
 import React from "react";
-import { useRoute } from "wouter";
 import ListOfFilms from "../../components/ListOfFilms";
 import useFilms from "../../hooks/useFilms";
 

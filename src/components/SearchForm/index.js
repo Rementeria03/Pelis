@@ -1,14 +1,12 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { useLocation } from "wouter";
 import { Box, Input, InputGroup, InputRightElement } from "@chakra-ui/react";
 import { SearchIcon, StarIcon } from "@chakra-ui/icons";
 import "./SearchForm.css";
-import { FilmsContext } from "../../contexts/FilmContext";
 
 export default function SearchForm() {
   const [keyword, setKeyowrd] = useState("");
   const [rating, setRating] = useState(0);
-  const { films, setFilms } = useContext(FilmsContext);
 
   const [, setLocation] = useLocation();
 
