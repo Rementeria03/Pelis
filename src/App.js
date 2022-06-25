@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route } from "wouter";
+import Header from "./components/Header";
+import Home from "./pages/Home/Home.js";
+import { FilmsProvider } from "./contexts/FilmContext";
+import "./App.css";
+import { ChakraProvider } from "@chakra-ui/react";
+import SearchPage from "./pages/SearchPage/SearchPage";
+import Detail from "./pages/Detail/Detail";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <FilmsProvider>
+        <ChakraProvider>
+          <Header></Header>
+          <Route path="/" component={Home} />
+          <Route path="/search/:keyword/:rating?" component={SearchPage} />
+          <Route path="/detail/:filmId" component={Detail} />
+        </ChakraProvider>
+      </FilmsProvider>
     </div>
   );
 }
